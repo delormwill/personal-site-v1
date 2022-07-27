@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Will Delorm | Web Developer</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;600&family=Lora:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+  <!-- Personal Style Sheet -->
+  <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+  <nav id="navbar">
+    <img id="nav-img" src="./photos/profile-photo.jpeg" alt="profile photo" />
+    <a id="menu" class="fas fa-bars" href="javascript:void();" onClick="toggleMenu()"></a>
+    <div id="nav-links">
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </nav>
+  <section id="welcome">
+    <img id="welcome-img" src="./photos/profile-photo.jpeg" alt="profile photo" />
+    <div id="welcome-text">
+      <h1>Hi, I'm Will!</h1>
+      <p>
+        I'm a developer based out of New York currently building beautiful
+        and responsive websites! <a class="welcome-link" href="#about">(get to know me)</a>
+      </p>
+      <div id="mini-nav">
+        <p>
+          <a class="welcome-link" href="#work">my work</a>
+          <a class="welcome-link" href="#skills">skills</a>
+          <a class="welcome-link" href="#contact">let's chat</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="work">
+    <h2>Here's what I've been working on!</h2>
+    <div id="work-container">
+      <div class="work-card">
+        <h3 class="work-header">Tribute Page</h3>
+        <a href="https://codepen.io/willdelorm/pen/OJxeKLv">
+          <img class="work-img" src="./photos/brad-gobright-tribute.png" />
+        </a>
+      </div>
+      <div class="work-card">
+        <h3 class="work-header">Landing Page</h3>
+        <a href="https://codepen.io/willdelorm/pen/LYzagXN">
+          <img class="work-img" src="./photos/yoga-landing-page.png" />
+        </a>
+      </div>
+      <div class="work-card">
+        <h3 class="work-header">Parallax Exercise</h3>
+        <a href="https://codepen.io/willdelorm/pen/XWeLvgX">
+          <img class="work-img" src="./photos/parallax-webpage.png" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="bg-alt">
+    <div id="about-text">
+      <h2>Well, how did I get here?</h2>
+      <p>I have always had a knack for working with technology. Simply put, I get it. So it made sense in 2021, with
+        every one hitting the big reset button, for me to jump into programming as a career. As a teenager, I learned
+        Java and SQL. More recently, I have gained a foundational knowledge of many front-end and back-end systems.</p>
+      <p>My previous professions have been in theatre design & production and the rock climbing industry. Both of
+        these environments demand strong problem solving, communication and teamwork to achieve a successful product. I
+        have honed these critical skills and have found myself adaptable to most-any situation that comes my way.</p>
+      <p>What gets me excited about web development is the enormous need for it in all industries. Curious
+        as I am, I am looking forward to finding my skills used and challenged in an array of unlikely places.</p>
+    </div>
+  </section>
+  <section id="skills">
+    <h2>Sharpening my skills</h2>
+    <div id="flex-skills">
+      <div class="skill-block">
+        <div class="meter">
+          <span style="width: 80%"></span>
+        </div>
+        <p>HTML</p>
+      </div>
+      <div class="skill-block">
+        <div class="meter">
+          <span style="width: 60%"></span>
+        </div>
+        <p>CSS</p>
+      </div>
+      <div class="skill-block">
+        <div class="meter">
+          <span style="width: 50%"></span>
+        </div>
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-block">
+        <div class="meter">
+          <span style="width: 40%"></span>
+        </div>
+        <p>Bootstrap</p>
+      </div>
+      <div class="skill-block">
+        <div class="meter">
+          <span style="width: 30%"></span>
+        </div>
+        <p>React</p>
+      </div>
+      <div class="skill-block">
+        <div class="meter">
+          <span style="width: 90%"></span>
+        </div>
+        <p>Communication</p>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2 id="contact-header">Let's get started!</h2>
+    <p>Have I ever steered you wrong? Exactly.</p>
+    <div>
+      <a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/willdelorm/"></a>
+      <a class="fab fa-twitter" href="https://twitter.com/willdelorm"></a>
+      <a class="fab fa-github" href="https://github.com/delormwill"></a>
+      <a class="fas fa-envelope" href="mailto:willdelorm@gmail.com"></a>
+    </div>
+  </section>
+  <footer>
+    <p>designed and coded by Will Delorm</p>
+  </footer>
+  <script>
+    /*---------------------------------------*/
+    /*  NAVIGATION VISIBLE ON SCROLL
+    /*---------------------------------------*/
+    window.onscroll = function () {
+      var currentScrollPos = window.scrollY;
+      var scrollBoundary = document.getElementById("work").offsetTop - 100;
+
+      if (currentScrollPos > (scrollBoundary)) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-100px";
+        if (deviceWidth.matches) {
+          document.getElementById("nav-links").style.display = "none";
+        }
+      }
+    }
+
+    /*---------------------------------------*/
+    /*  TOGGLE MOBILE NAV LINKS ON CLICK
+    /*---------------------------------------*/
+    function toggleMenu() {
+      var x = document.getElementById("nav-links");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+
+    function checkDeviceWidth(deviceWidth) {
+      if (deviceWidth.matches) {
+        document.getElementById("nav-links").style.display = "none";
+      } else {
+        document.getElementById("nav-links").style.display = "block";
+      }
+    }
+
+    var deviceWidth = window.matchMedia("(max-width: 600px)");
+    checkDeviceWidth(deviceWidth);
+    deviceWidth.addListener(checkDeviceWidth);
+  </script>
+</body>
+
+</html>

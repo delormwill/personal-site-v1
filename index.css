@@ -1,0 +1,414 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-bg-color: #ecf0f1;
+  --alt-bg-color: #bdc3c7;
+  --trd-bg-color: #2c3e50;
+
+  --bg-img: url("./photos/asfalt-dark.png");
+
+  --main-txt-color: #34495e;
+  --alt-txt-color: #ecf0f1;
+  --dark-txt-color: #95a5a6;
+
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+
+  background-color: var(--main-bg-color, white);
+  background-image: var(--bg-img);
+  color: var(--main-txt-color, navy);
+  font-family: "Encode Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: left;
+}
+
+a {
+  color: var(--main-txt-color, navy);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  text-align: center;
+
+  display: block;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  margin: 0.5rem auto;
+  padding-top: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+#navbar {
+  background-color: var(--alt-bg-color, gray);
+  box-shadow: var(--shadow, none);
+  width: 100%;
+  height: auto;
+
+  position: fixed;
+  top: -100px;
+  left: 0;
+  z-index: 100;
+}
+
+#nav-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 5px 10px;
+  box-shadow: var(--shadow, none);
+}
+
+#menu {
+  color: var(--main-txt-color, navy);
+  font-size: 24px;
+  padding: 18px;
+  margin: 5px 10px;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#nav-links {
+  display: none;
+}
+
+.nav-link {
+  display: block;
+  font-size: 24px;
+  margin: 10px 12px;
+}
+
+#welcome {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome-img {
+  width: 40%;
+  max-width: 200px;
+  height: auto;
+
+  border-radius: 50%;
+  box-shadow: var(--shadow, none);
+  margin-bottom: 40px;
+}
+
+#welcome-text {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 30px;
+}
+
+.welcome-link {
+  padding-bottom: 3px;
+  border-bottom: 1px solid;
+  margin-right: 20px;
+}
+
+#work {
+  background-color: var(--alt-bg-color, gray);
+  padding: 30px 10%;
+  text-align: center;
+}
+
+.work-card {
+  background-color: var(--main-bg-color, white);
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin: 0 auto 50px;
+  box-shadow: var(--shadow);
+}
+
+.work-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#about {
+  background-color: var(--alt-bg-color, gray);
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("./photos/gunks.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#about-text {
+  color: var(--alt-txt-color, white);
+  padding: 10% 5%;
+}
+
+#skills {
+  text-align: center;
+  padding: 10% 5%;
+}
+
+#flex-skills {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skill-block {
+  width: 40%;
+}
+
+.meter {
+  height: 40px;
+  position: relative;
+  background: #95a5a6;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background-color: rgb(43, 194, 83);
+  background-image: linear-gradient(center bottom, #27ae60 37%, #2ecc71 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.meter > span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  z-index: 1;
+  background-size: 50px 50px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+
+#contact {
+  background-color: var(--trd-bg-color, gray);
+  color: var(--alt-txt-color, white);
+  height: 50vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-header {
+  font-size: 42px;
+  margin-bottom: 1rem;
+}
+
+.fab,
+.fas {
+  color: var(--alt-txt-color, white);
+  font-size: 20px;
+  text-decoration: none;
+
+  padding: 12px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.fa-linkedin-in {
+  background: #007bb5;
+}
+
+.fa-twitter {
+  background: #55acee;
+}
+
+.fa-github {
+  background: #333;
+}
+
+.fa-envelope {
+  background: gray;
+}
+
+footer {
+  background-color: var(--trd-bg-color, gray);
+  font-size: 12px;
+  text-align: center;
+  padding: 16px;
+}
+
+footer p,
+footer a {
+  color: #bdc3c7;
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 48px;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  #navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  #nav-links {
+    display: block;
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
+
+  #work {
+    padding: 30px 5%;
+  }
+
+  #work-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  #about {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url("./photos/birdsboro.jpg");
+  }
+
+  #about-text {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  #about-text h2 {
+    text-align: left;
+  }
+
+  #skills {
+    padding: 10% 5%;
+  }
+
+  .skill-block {
+    width: 30%;
+    max-width: 300px;
+  }
+
+  #contact-header {
+    font-size: 60px;
+  }
+
+  .fab,
+  .fas {
+    font-size: 24px;
+    padding: 18px;
+    margin: 0 1rem;
+  }
+
+  footer {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #welcome {
+    flex-direction: row;
+  }
+
+  #welcome-img {
+    max-width: 300px;
+  }
+
+  #welcome-text {
+    max-width: 360px;
+    margin: 0 60px;
+  }
+}
